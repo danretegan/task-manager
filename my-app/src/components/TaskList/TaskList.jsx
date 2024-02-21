@@ -7,7 +7,7 @@ import { statusFilters } from "../../redux/constants";
 
 
 const getVisibleTasks = (tasks, statusFilter) => {
-  
+
   switch(statusFilter){
 
     case statusFilters.active: 
@@ -41,3 +41,6 @@ const visibleTasks = getVisibleTasks(tasks, statusFilter);
     </ul>
   );
 };
+
+// UNDE SUNT PROPS?
+// Componenta TaskList nu are props, așa cum ar fi cu React State. Componenta App nu mai trebuie să știe că TaskList este abonată la datele din store. Folosind Redux, orice componentă poate accesa direct valorile din starea Redux, dacă este necesar.
