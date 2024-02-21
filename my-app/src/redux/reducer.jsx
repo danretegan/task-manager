@@ -2,7 +2,7 @@ import { statusFilters } from "./constants";
 // Importăm funcția de compoziție pentru reducers:
 import { combineReducers } from "redux";
 
-const taskInitialState = [
+const tasksInitialState = [
   { id: 0, text: "Learn HTML and CSS", completed: true },
   { id: 1, text: "Get good at JavaScript", completed: true },
   { id: 2, text: "Master React", completed: false },
@@ -12,7 +12,7 @@ const taskInitialState = [
 
 // Este responsabil doar pentru actualizarea proprietății tasks
 // Acum valoarea parametrului state va fi o matrice de sarcini
-const tasksReducer = (state = taskInitialState, action) => {
+const tasksReducer = (state = tasksInitialState, action) => {
   switch (action.type) {
     case "tasks/addTask":
       return [...state, action.payload];
@@ -45,10 +45,7 @@ const filtersReducer = (state = filtersInitialState, action) => {
     case "filters/setStatusFilter":
       return {
         ...state,
-        filters: {
-          ...state.filters,
-          status: action.payload,
-        },
+        status: action.payload,
       };
     default:
       return state;
@@ -56,7 +53,7 @@ const filtersReducer = (state = filtersInitialState, action) => {
 };
 
 // Codul funcțiilor tasksReducer și filtersReducer:
-export const rootReducer = combineReducers ({
-    tasks: tasksReducer,
-    filters: filtersReducer,
-})
+export const rootReducer = combineReducers({
+  tasks: tasksReducer,
+  filters: filtersReducer,
+});
