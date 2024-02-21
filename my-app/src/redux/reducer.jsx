@@ -40,6 +40,14 @@ export const rootReducer = (state = initialState, action) => {
           };
         }),
       };
+    case "filters/setStatusFilter":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          status: action.payload,
+        },
+      };
     default:
       return state;
   }
