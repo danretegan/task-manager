@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { devToolsEnhancer } from "@redux-devtools/extension";
 
 // Valoarea inițială a stării Redux pentru reducer-ul rădăcină
 // dacă nu este trecut parametrul preloadedState:
@@ -20,4 +21,7 @@ const rootReducer = (state = initialState, action) => {
   return state;
 };
 
-export const store = createStore(rootReducer);
+// Vom extinde store-ul pentru a adăuga devTools
+const enhancer = devToolsEnhancer();
+
+export const store = createStore(rootReducer, enhancer);
