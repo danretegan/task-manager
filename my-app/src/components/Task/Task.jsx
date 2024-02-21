@@ -35,8 +35,5 @@ export const Task = ({ task }) => {
 };
 
 Task.propTypes = {
-  id: PropTypes.string,
-  text: PropTypes.string,
-  completed: PropTypes.bool,
+  task: PropTypes.object,
 };
-
