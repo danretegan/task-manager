@@ -1,8 +1,20 @@
 import { MdClose } from "react-icons/md";
 import css from "./Task.module.css";
 import PropTypes from "prop-types";
+// Importăm hook-ul:
+import { useDispatch } from "react-redux";
+// Importăm generatorul de acțiuni:
+import {deleteTask} from '../../redux/actions';
+
 
 export const Task = ({ task }) => {
+  // Obținem o referință către funcția pentru trimiterea acțiunii:
+  const dispatch = useDispatch();
+
+  // Apelăm generatorul de acțiuni și-i transmitem id-ul sarcinii
+  // Trimitem rezultatul - o acțiunea de ștergere a sarcinii:
+  const handleDelete = () => dispatch(deleteTask(task.id))
+
   return (
     <div className={css.wrapper}>
       <input
@@ -11,7 +23,10 @@ export const Task = ({ task }) => {
         checked={task.completed}
       />
       <p className={css.text}>{task.text}</p>
-      <button className={css.btn}>
+      <button 
+        type='button' 
+        onClick={handleDelete} 
+        className={css.btn}>
         <MdClose size={24} />
       </button>
     </div>
@@ -20,7 +35,8 @@ export const Task = ({ task }) => {
 
 Task.propTypes = {
   task: PropTypes.shape({
-    completed: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
   }).isRequired,
 };
