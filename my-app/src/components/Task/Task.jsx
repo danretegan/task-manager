@@ -35,9 +35,8 @@ export const Task = ({ task }) => {
 };
 
 Task.propTypes = {
-  task: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
-  }).isRequired,
+  id: PropTypes.string,
+  text: PropTypes.string,
+  completed: PropTypes.bool,
 };
+
