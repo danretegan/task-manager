@@ -1,11 +1,20 @@
-
 import { Button } from "../Button/Button";
 import css from "./TaskForm.module.css";
+// Importăm hook-ul:
+import { useDispatch } from "react-redux";
+// Importăm un generator de acțiuni:
+import { addTask } from "../../redux/actions";
 
 export const TaskForm = () => {
+  // Obținem o referință către o funcție pentru trimiterea acțiunii:
+  const dispatch = useDispatch();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
+    // Apelăm generatorul de acțiuni și-i transmitem textul sarcinii pentru câmpul payload
+    // Trimitem rezultatul - o acțiune de creare a sarcinii.
+    dispatch(addTask(form.elements.text.value));
     form.reset();
   };
 
