@@ -4,10 +4,11 @@ import css from "./StatusFilter.module.css";
 import { useSelector } from "react-redux";
 // Importăm obiectul cu valorile filtrelor:
 import { statusFilters } from "../../redux/constants";
+import { getStatusFilter } from "../../redux/selectors";
 
 export const StatusFilter = () => {
   // Obținem valoarea filtrului din starea Redux:
-const filter = useSelector( state => state.filters.status );
+  const filter = useSelector(getStatusFilter);
 
   return (
     <div className={css.wrapper}>
