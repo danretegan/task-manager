@@ -19,7 +19,7 @@
 - StatusFilter
 - TaskList
 
-## Task Components:
+## Task List:
 - TaskList
 
 ## Task Counter:
