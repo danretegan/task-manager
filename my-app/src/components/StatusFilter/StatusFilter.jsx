@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { statusFilters } from "../../redux/constants";
 import { getStatusFilter } from "../../redux/selectors";
 // Importăm generatorul de acțiuni:
-import { setStatusFilter } from "../../redux/actions";
+import { setStatusFilter } from "../../redux/sliceFilters";
 
 export const StatusFilter = () => {
   // Obținem o referință către o funcție pentru trimiterea acțiunii:

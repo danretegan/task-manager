@@ -1,4 +1,4 @@
-import { addTask } from "../../redux/actions";
+import { addTask } from "../../redux/sliceTasks";
 import { Button } from "../Button/Button";
 import css from "./TaskForm.module.css";
 // Importăm hook-ul:
