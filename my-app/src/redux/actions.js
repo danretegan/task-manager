@@ -1,24 +1,35 @@
-import { nanoid } from "nanoid";
+import { createAction, nanoid } from "@reduxjs/toolkit";
 
-export const addTask = (text) => {
+export const addTask = createAction("tasks/addTask", (text) => {
   return {
-    type: "tasks/addTask",
     payload: {
+      text,
       id: nanoid(),
-      text: text,
       completed: false,
     },
   };
-};
+});
 
-export const deleteTask = (taskId) => {
-  return { type: "tasks/deleteTask", payload: taskId };
-};
+console.log(addTask("Learn Redux Toolkit"));
+/**
+ * {
+ *   type: 'tasks/addTask',
+ *   payload: {
+ *     text: 'Learn Redux Toolkit',
+ *     id: '4AJvwMSWEHCchcWYga3dj',
+ *     completed: false
+ *   }
+ * }
+ **/
 
-export const toggleCompleted = (taskId) => {
-  return { type: "tasks/toggleCompleted", payload: taskId };
-};
+export const deleteTask = createAction("tasks/deleteTask");
 
-export const setStatusFilter = (value) => {
-  return { type: "filters/setStatusFilter", payload: value };
-};
+export const toggleCompleted = createAction("tasks/toggleCompleted");
+
+export const setStatusFilter = createAction("tasks/setStatusFilter");
+
+// Generatorul de acțiuni are o proprietate type:
+console.log(addTask.type); // "tasks/AddTask"
+
+// Metoda toString() a funcției addTask a fost suprascrisă
+console.log(addTask.toString()); // "tasks/AddTask"
