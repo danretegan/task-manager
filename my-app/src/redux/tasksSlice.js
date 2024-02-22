@@ -40,5 +40,6 @@ const tasksSlice = createSlice({
   },
 });
 
+// Exportam generatoarele de actiuni si reducer-ul:
 export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions;
 export const tasksReducer = tasksSlice.reducer;
