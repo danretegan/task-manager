@@ -1,6 +1,5 @@
+// reducer refactoring using Redux Toolkit:
 import { statusFilters } from "./constants";
-// Importăm funcția de compoziție pentru reducers:
-import { combineReducers } from "redux";
 
 const tasksInitialState = [
   { id: 0, text: "Learn HTML and CSS", completed: true },
@@ -12,7 +11,7 @@ const tasksInitialState = [
 
 // Este responsabil doar pentru actualizarea proprietății tasks
 // Acum valoarea parametrului state va fi o matrice de sarcini
-const tasksReducer = (state = tasksInitialState, action) => {
+export const tasksReducer = (state = tasksInitialState, action) => {
   switch (action.type) {
     case "tasks/addTask":
       return [...state, action.payload];
@@ -40,7 +39,7 @@ const filtersInitialState = {
 
 // Este responsabil doar pentru actualizarea proprietății filters
 // Acum valoarea parametrului state va fi un obiect cu valorile filtrului
-const filtersReducer = (state = filtersInitialState, action) => {
+export const filtersReducer = (state = filtersInitialState, action) => {
   switch (action.type) {
     case "filters/setStatusFilter":
       return {
@@ -51,9 +50,3 @@ const filtersReducer = (state = filtersInitialState, action) => {
       return state;
   }
 };
-
-// Codul funcțiilor tasksReducer și filtersReducer:
-export const rootReducer = combineReducers({
-  tasks: tasksReducer,
-  filters: filtersReducer,
-});

@@ -1,6 +1,10 @@
+// store refactoring using Redux Toolkit:
 import { configureStore } from "@reduxjs/toolkit";
-import { rootReducer } from "./reducer";
+import { filtersReducer, tasksReducer } from "./reducer";
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    tasks: tasksReducer,
+    filters: filtersReducer,
+  },
 });
