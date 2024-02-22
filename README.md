@@ -35,8 +35,8 @@
 - Action Creators
 
 ## Sending Actions:
--dispatch /useDispatch()
+- dispatch /useDispatch()
 
 ## Reducers:
--Root reducer
+- Root reducer
 - combineReducers
