@@ -19,7 +19,6 @@
 ## Filter and Display Components:
 - StatusFilter component
 	- Utilizes useSelector to get the filter value
-- src/redux/constants.js for storing filter values
 - TaskList component that relies on the StatusFilter component
 
 ## Task Components:
@@ -33,10 +32,8 @@
 	- Calculates derived data for the count of active and completed tasks
 
 ## Selector Functions:
-- Functions declared in src/redux/selectors.js
-	- getTasks
-	- getStatusFilter
-	- Emphasize the benefits of a single source of truth for selectors
+- getTasks
+- getStatusFilter
 
 ## Actions and Action Creators:
 - Actions
