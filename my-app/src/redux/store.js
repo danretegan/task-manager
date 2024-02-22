@@ -1,6 +1,7 @@
-// store refactoring using Redux Toolkit:
+// store refactoring using Redux Toolkit & Slice:
 import { configureStore } from "@reduxjs/toolkit";
-import { filtersReducer, tasksReducer } from "./reducer";
+import { tasksReducer } from "./sliceTasks";
+import { filtersReducer } from "./sliceFilters";
 
 export const store = configureStore({
   reducer: {
