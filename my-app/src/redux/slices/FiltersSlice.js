@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { statusFilters } from "../constants";
-
-const filtersInitialState = {
-  status: statusFilters.all,
-};
+import { filtersInitialState } from "../constants";
 
 const filtersSlice = createSlice({
   name: "filters",
