@@ -1,8 +1,8 @@
 # Redux toolkit
 
 ## 1) Instalare: 
-`npm install @reduxjs/toolkit`
-`npm install @reduxjs/toolkit react-redux`
+- `npm install @reduxjs/toolkit`
+- `npm install @reduxjs/toolkit react-redux`
 
 ## 2) Creare slice-uri: 
 Impărțim starea în "slice-uri" logice care să reprezinte diferite aspecte ale stării aplicației. Fiecare slice trebuie să facă referire la gestionarea unei părți specifice a stării și a logicii asociate.
