@@ -1,4 +1,4 @@
-# Redux
+# Redux toolkit
 
 ## Redux Setup:
 - npm install redux
