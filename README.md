@@ -1,47 +1,29 @@
 # Redux toolkit
 
-## Redux Setup:
-- npm install redux
-- npm install react-redux
+## 1) Instalare: 
+`npm install @reduxjs/toolkit`
+`npm install @reduxjs/toolkit react-redux`
 
-## Store:
-- createStore
-- Provider
+## 2) Creare slice-uri: 
+Impărțim starea în "slice-uri" logice care să reprezinte diferite aspecte ale stării aplicației. Fiecare slice trebuie să facă referire la gestionarea unei părți specifice a stării și a logicii asociate.
 
-## Redux DevTools:
-- npm install @redux-devtools/extension
-- devToolsEnhancer
+## 3) Definirea reducer-ului: 
+Folosim funcția `createSlice` pentru a defini reducer-ul și acțiunile asociate slice-ului. Aceasta permite definirea reducer-ului și a acțiunilor într-o manieră simplificată, fără a fi nevoie să ne ocupam manual de generarea constantelor și a creatorilor de acțiuni.
 
-## Store Subscription:
-- useSelector(selector)
-- Subscription logic using useSelector
+## 4) Crearea store: 
+Folosim funcția `configureStore` pentru a crea magazinul (store) Redux. Aceasta automatizează multe aspecte ale configurării magazinului, cum ar fi adăugarea reducer-ilor și gestionarea middleware-ului.
 
-## Filter and Display Components:
-- StatusFilter component
-	- Utilizes useSelector to get the filter value
-- TaskList component that relies on the StatusFilter component
+## 5) Conectarea componentelor:
+Folosim componenta `Provider` furnizată de Redux pentru a înveli aplicația React și a-i oferi acces la magazinul Redux.
 
-## Task Components:
-- TaskList component
-	- Uses useSelector to get tasks and filter values
-	- Utilizes a function (getVisibleTasks) to calculate visible tasks based on the filter
+## 6) Utilizarea hook-urilor Redux: 
+Folosim hook-urile furnizate de Redux Toolkit, precum `useDispatch` și `useSelector` pentru a trimite (`dispatch`) acțiuni către magazin (store) și pentru a accesa starea aplicației în componente.
 
-## Task Counter:
-- TaskCounter component
-	- Uses useSelector to get tasks
-	- Calculates derived data for the count of active and completed tasks
+## 7) Dispatch acțiuni: 
+Folosim metoda `dispatch` pentru a trimite acțiuni către reducer-urile definite și pentru a actualiza starea aplicației.
 
-## Selector Functions:
-- getTasks
-- getStatusFilter
+## 8) Accesarea stării: 
+Folosim hook-ul `useSelector` pentru a accesa starea din componente și pentru a reacționa la schimbările de stare.
 
-## Actions and Action Creators:
-- Actions
-- Action Creators
-
-## Sending Actions:
-- dispatch /useDispatch()
-
-## Reducers:
-- Root reducer
-- combineReducers
+## Concluzii:
+Prin utilizarea Redux Toolkit putem gestiona starea aplicației într-un mod eficient și fără a fi necesar să scriem o mulțime de cod repetitiv. Aceasta oferă un set de unelte puternice pentru dezvoltarea aplicațiilor Redux într-un mod simplificat și productiv.
